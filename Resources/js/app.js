@@ -10,12 +10,12 @@ var filterButton = d3.select("#filter-btn");
 // Include event handler for when date filter button is clicked
 filterButton.on("click", function() {
 
+	// First clear out previous table 
+	// tbody.selectAll("td").exit().remove();
+	d3.selectAll("td").remove();
+
 	// Prevent the page from refreshing
 	d3.event.preventDefault();
-
-	// First clear out previous table 
-	tbody.selectAll("td").exit().remove();
-	// tbody.selectAll("tr").selectAll("td").remove();
 
 	// Select the input element and get the raw HTML node
 	var inputDate = d3.select(".form-control");
